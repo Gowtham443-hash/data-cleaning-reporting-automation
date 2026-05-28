@@ -1,0 +1,21 @@
+import pandas as pd
+
+# Sample data
+data = {
+    "Name": ["Ravi", "Ravi", "Kumar", "Priya"],
+    "Marks": [85, 85, None, 90]
+}
+
+df = pd.DataFrame(data)
+
+# Remove duplicates
+df = df.drop_duplicates()
+
+# Fill missing values
+df["Marks"] = df["Marks"].fillna(0)
+
+# Save cleaned data
+df.to_csv("cleaned_data.csv", index=False)
+
+print("Data cleaned successfully!")
+print(df)
